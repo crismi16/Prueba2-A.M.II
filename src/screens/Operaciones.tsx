@@ -8,6 +8,7 @@ import { db } from '../config/Config';
 export default function Operaciones() {
     const [correo, setCorreo] = useState('')
     const [contraseña, setContraseña] = useState('')
+    
   
     function guardarRegistro(correo:string,contraseña:string) {
           
@@ -22,23 +23,36 @@ export default function Operaciones() {
       return (
           <View style={styles.container}>
               <Text style={styles.textStart}>OPERACIONES</Text>
-              <Text style={styles.texto}>Id Operacion:</Text>
+              <Text style={styles.texto}>Id operación:</Text>
               <TextInput
                 style={styles.input}
                 onChangeText={(texto)=> setCorreo(texto)}
                 value={correo}
-                placeholder="cristian@gmail.com"
-                keyboardType='email-address'
+                placeholder="1"
               />
               <Text style={styles.texto}>Monto:</Text>
               <TextInput
                 style={styles.input}
                 onChangeText={(texto)=> setContraseña(texto)}
                 value={contraseña}
-                placeholder="123456"
+                placeholder="200"
+              />
+              <Text style={styles.texto}>Tipo operación:</Text>
+              <TextInput
+                style={styles.input}
+                onChangeText={(texto)=> setContraseña(texto)}
+                value={contraseña}
+                placeholder="Administrativo"
+              />
+              <Text style={styles.texto}>Comentario:</Text>
+              <TextInput
+                style={styles.input}
+                onChangeText={(texto)=> setContraseña(texto)}
+                value={contraseña}
+                placeholder="Hola mundo"
               />
               <View style={styles.containerB}>
-                <ButtonComponent title='INGRESAR' onPress={()=>guardarRegistro(correo,contraseña)}/>
+                <ButtonComponent title='EJECUTAR' onPress={()=>guardarRegistro(correo,contraseña)}/>
               </View>
             </View>
         )
